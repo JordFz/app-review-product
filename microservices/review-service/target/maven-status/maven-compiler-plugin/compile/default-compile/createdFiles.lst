@@ -1,0 +1,4 @@
+com/jfcdevs/app/persistence/ReviewRepository.class
+com/jfcdevs/app/persistence/ReviewEntity.class
+com/jfcdevs/app/ReviewServiceApplication.class
+com/jfcdevs/app/services/ReviewServiceImpl.class

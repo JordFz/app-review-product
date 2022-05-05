@@ -1,0 +1,10 @@
+server:
+  port: 7002
+
+logging:
+  level:
+    root: INFO
+    com.jfcdevs.app: DEBUG
+---
+spring.config.activate.on-profile: docker
+server.port: 8080

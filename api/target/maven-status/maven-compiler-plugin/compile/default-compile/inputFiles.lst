@@ -1,0 +1,13 @@
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/product/ProductService.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/recommendation/RecommendationService.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/composite/product/ProductAggregate.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/composite/product/RecommendationSummary.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/composite/product/ProductCompositeService.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/exceptions/InvalidInputException.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/composite/product/ReviewSummary.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/recommendation/Recommendation.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/product/Product.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/composite/product/ServiceAddress.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/exceptions/NotFoundException.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/review/Review.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/api/src/main/java/com/jfcdevs/app/core/api/core/review/ReviewService.java
