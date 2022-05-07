@@ -1,4 +1,6 @@
+com/jfcdevs/app/services/ProductMapper.class
+com/jfcdevs/app/services/ProductMapperImpl.class
+com/jfcdevs/app/ProductServiceApplication.class
 com/jfcdevs/app/persistence/ProductEntity.class
 com/jfcdevs/app/persistence/ProductRepository.class
 com/jfcdevs/app/services/ProductServiceImpl.class
-com/jfcdevs/app/ProductServiceApplication.class

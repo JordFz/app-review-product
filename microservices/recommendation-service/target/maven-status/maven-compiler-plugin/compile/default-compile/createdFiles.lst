@@ -1,2 +1,6 @@
-com/jfcdevs/app/RecommendationServiceApplication.class
+com/jfcdevs/app/services/RecommendationMapperImpl.class
+com/jfcdevs/app/persistence/RecommendationRepository.class
 com/jfcdevs/app/services/RecommendationServiceImpl.class
+com/jfcdevs/app/RecommendationServiceApplication.class
+com/jfcdevs/app/persistence/RecommendationEntity.class
+com/jfcdevs/app/services/RecommendationMapper.class

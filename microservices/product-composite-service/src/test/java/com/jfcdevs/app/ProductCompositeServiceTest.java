@@ -2,7 +2,11 @@ package com.jfcdevs.app;
 
 import static org.mockito.Mockito.when;
 import static java.util.Collections.singletonList;
+import static org.springframework.http.HttpStatus.*;
 
+import com.jfcdevs.app.core.api.composite.product.ProductAggregate;
+import com.jfcdevs.app.core.api.composite.product.RecommendationSummary;
+import com.jfcdevs.app.core.api.composite.product.ReviewSummary;
 import com.jfcdevs.app.core.api.core.product.Product;
 import com.jfcdevs.app.core.api.core.recommendation.Recommendation;
 import com.jfcdevs.app.core.api.core.review.Review;
@@ -17,6 +21,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import reactor.core.publisher.Mono;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProductCompositeServiceTest {
@@ -47,14 +52,31 @@ public class ProductCompositeServiceTest {
     }
 
     @Test
+    void createCompositeProduct1(){
+        ProductAggregate compositeProduct = new ProductAggregate(1,"name",1,null,null,null);
+        postAndVerifyProduct(compositeProduct, OK);
+    }
+    @Test
+    void createCompositeProduct2(){
+        ProductAggregate compositeProduct = new ProductAggregate(1, "name", 1,
+            singletonList(new RecommendationSummary(1,"a",1,"c")),
+                singletonList(new ReviewSummary(1,"a","s","c")), null
+        );
+        postAndVerifyProduct(compositeProduct, OK);
+    }
+    @Test
+    void deleteCompositeProduct(){
+        ProductAggregate compositeProduct = new ProductAggregate(1, "name", 1,
+                singletonList(new RecommendationSummary(1,"a",1,"c")),
+                singletonList(new ReviewSummary(1,"a","s","c")), null
+        );
+        postAndVerifyProduct(compositeProduct, OK);
+        deleteAndVerifyProduct(compositeProduct.getProductId(), OK);
+        deleteAndVerifyProduct(compositeProduct.getProductId(), OK);
+    }
+    @Test
     void getProductById(){
-        client.get()
-                .uri("/product-composite/"+PRODUCT_ID_OK)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectHeader().contentType(MediaType.APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyProduct(PRODUCT_ID_OK, OK)
                 .jsonPath("$.productId").isEqualTo(PRODUCT_ID_OK)
                 .jsonPath("$.recommendations.length()").isEqualTo(1)
                 .jsonPath("$.reviews.length()").isEqualTo(1);
@@ -62,28 +84,39 @@ public class ProductCompositeServiceTest {
 
     @Test
     void getProductNotFound(){
-        client.get()
-                .uri("/product-composite/"+ PRODUCT_ID_NOT_FOUND)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isNotFound()
-                .expectHeader().contentType(MediaType.APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyProduct(PRODUCT_ID_NOT_FOUND, NOT_FOUND)
                 .jsonPath("$.path").isEqualTo("/product-composite/" + PRODUCT_ID_NOT_FOUND)
                 .jsonPath("$.message").isEqualTo("NOT FOUND: " + PRODUCT_ID_NOT_FOUND);
     }
 
     @Test
     void getProductInvalidInput(){
-        client.get()
-                .uri("/product-composite/" + PRODUCT_ID_INVALID)
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY)
-                .expectHeader().contentType(MediaType.APPLICATION_JSON)
-                .expectBody()
+        getAndVerifyProduct(PRODUCT_ID_INVALID, UNPROCESSABLE_ENTITY)
                 .jsonPath("$.path").isEqualTo("/product-composite/" + PRODUCT_ID_INVALID)
                 .jsonPath("$.message").isEqualTo("INVALID: " + PRODUCT_ID_INVALID);
+    }
+
+    private WebTestClient.BodyContentSpec getAndVerifyProduct(int productId, HttpStatus expectedStatus){
+        return client.get()
+                .uri("/product-composite/" + productId)
+                .accept(MediaType.APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isEqualTo(expectedStatus)
+                .expectHeader().contentType(MediaType.APPLICATION_JSON)
+                .expectBody();
+    }
+    private void postAndVerifyProduct(ProductAggregate compositeProduct, HttpStatus expectedStatus){
+        client.post()
+                .uri("/product-composite")
+                .body(Mono.just(compositeProduct), ProductAggregate.class)
+                .exchange()
+                .expectStatus().isEqualTo(expectedStatus);
+    }
+    private void deleteAndVerifyProduct(int productId, HttpStatus expectedStatus){
+        client.delete()
+                .uri("/product-composite/"+productId)
+                .exchange()
+                .expectStatus().isEqualTo(expectedStatus);
     }
 
 }
