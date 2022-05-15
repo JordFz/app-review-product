@@ -1,6 +1,8 @@
 com/jfcdevs/app/persistence/ReviewRepository.class
 com/jfcdevs/app/services/ReviewMapper.class
 com/jfcdevs/app/persistence/ReviewEntity.class
+com/jfcdevs/app/services/MessageProcessorConfig$1.class
 com/jfcdevs/app/services/ReviewMapperImpl.class
+com/jfcdevs/app/services/MessageProcessorConfig.class
 com/jfcdevs/app/ReviewServiceApplication.class
 com/jfcdevs/app/services/ReviewServiceImpl.class

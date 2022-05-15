@@ -1,19 +1,31 @@
 package com.jfcdevs.app;
 
+import com.jfcdevs.app.services.ProductCompositeIntegration;
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.actuate.health.CompositeReactiveHealthContributor;
+import org.springframework.boot.actuate.health.ReactiveHealthContributor;
+import org.springframework.boot.actuate.health.ReactiveHealthIndicator;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
+import reactor.core.scheduler.Scheduler;
+import reactor.core.scheduler.Schedulers;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @SpringBootApplication
 @ComponentScan("com.jfcdevs.app")
+@Slf4j
 public class ProductCompositeServiceApplication {
 
     @Value("${api.common.version}")
@@ -39,6 +51,21 @@ public class ProductCompositeServiceApplication {
     @Value("${api.common.contact.email}")
     String apiContactEmail;
 
+    private final Integer threadPoolSize;
+    private final Integer taskQueueSize;
+    @Autowired
+    public ProductCompositeServiceApplication(
+            @Value("${app.threadPoolSize:10}") Integer threadPoolSize,
+            @Value("${app.taskQueueSize:100}") Integer taskQueueSize) {
+        this.threadPoolSize = threadPoolSize;
+        this.taskQueueSize = taskQueueSize;
+    }
+    @Bean
+    public Scheduler publishEventScheduler(){
+        log.info("Creates a messagingScheduler with connectionPoolSize = {}", threadPoolSize);
+        return Schedulers.newBoundedElastic(threadPoolSize, taskQueueSize, "publish-pool");
+    }
+
     @Bean
     public OpenAPI getOpenApiDocumentation(){
         return new OpenAPI()
@@ -58,13 +85,23 @@ public class ProductCompositeServiceApplication {
                         .url(apiExternalDocUrl));
     }
 
-    @Bean
-    RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
     public static void main(String[] args) {
         SpringApplication.run(ProductCompositeServiceApplication.class, args);
     }
+
+   @Autowired
+    ProductCompositeIntegration integration;
+
+    @Bean
+    ReactiveHealthContributor coreServices(){
+        final Map<String, ReactiveHealthIndicator> registry = new LinkedHashMap<>();
+        registry.put("Product", () -> integration.getProductHealth());
+        registry.put("recommendation", () -> integration.getRecommendationHealth());
+        registry.put("review", ()  -> integration.getReviewHealth());
+
+        return CompositeReactiveHealthContributor.fromMap(registry);
+    }
+
 
 
 }

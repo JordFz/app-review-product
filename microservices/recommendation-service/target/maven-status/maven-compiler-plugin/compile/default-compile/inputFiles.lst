@@ -1,5 +1,6 @@
 /home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/persistence/RecommendationRepository.java
 /home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/services/RecommendationMapper.java
+/home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/services/MessageProcessorConfig.java
 /home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/RecommendationServiceApplication.java
 /home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/persistence/RecommendationEntity.java
 /home/jordan/Documents/jordan/devs/microservices/app-product-review/microservices/recommendation-service/src/main/java/com/jfcdevs/app/services/RecommendationServiceImpl.java

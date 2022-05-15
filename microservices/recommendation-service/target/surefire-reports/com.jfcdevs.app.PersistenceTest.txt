@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jfcdevs.app.PersistenceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.084 s - in com.jfcdevs.app.PersistenceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.837 s - in com.jfcdevs.app.PersistenceTest
