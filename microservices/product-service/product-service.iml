@@ -166,5 +166,11 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:kafka:1.16.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:rabbitmq:1.16.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-stream-kafka:3.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka:3.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka-core:3.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-kafka:5.5.11" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.kafka:spring-kafka:2.8.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
   </component>
 </module>

@@ -40,6 +40,7 @@
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.76.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver-dns:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.76.Final" level="project" />
@@ -84,10 +85,10 @@
     <orderEntry type="library" name="Maven: com.rabbitmq:http-client:3.12.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:3.0.10" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-json:3.0.10" level="project" />
-    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.8.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-library:2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:4.0.0" level="project" />
@@ -103,39 +104,12 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka-streams:3.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-starter-stream-kafka:3.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka:3.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-kafka-core:3.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-kafka:5.5.11" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.kafka:spring-kafka:2.8.5" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.kafka:spring-kafka-test:2.8.5" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.6.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper-jute:3.6.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.yetus:audience-annotations:0.5.0" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.76.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-transport-native-epoll:4.1.76.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-clients:test:3.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-metadata:3.0.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.kafka:kafka-server-common:3.0.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.kafka:kafka-raft:3.0.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-streams-test-utils:3.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kafka:kafka_2.13:3.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.13.6" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.kafka:kafka-storage:3.0.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.kafka:kafka-storage-api:3.0.1" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: net.sourceforge.argparse4j:argparse4j:0.7.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.module:jackson-module-scala_2.13:2.13.2" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.2" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.scala-lang.modules:scala-collection-compat_2.13:2.4.4" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.scala-lang.modules:scala-java8-compat_2.13:1.0.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.scala-lang:scala-reflect:2.13.6" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.typesafe.scala-logging:scala-logging_2.13:3.9.3" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: io.dropwizard.metrics:metrics-core:4.2.9" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: commons-cli:commons-cli:1.4" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.kafka:kafka_2.13:test:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-rabbit:3.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-stream-binder-rabbit-core:3.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-amqp:5.5.11" level="project" />
@@ -164,7 +138,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.19" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.19" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-test:5.3.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.19" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: io.projectreactor:reactor-test:3.4.17" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.4.17" level="project" />
