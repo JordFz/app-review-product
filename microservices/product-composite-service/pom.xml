@@ -85,6 +85,12 @@
       <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
     </dependency>
 
+<!--    DEPENDENCIES FROM CLOUD -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+
     <!--    TEST UNIT FOR STREAM, CLOUD AND SYSTEM SPRING-->
     <dependency>
       <groupId>org.springframework.boot</groupId>

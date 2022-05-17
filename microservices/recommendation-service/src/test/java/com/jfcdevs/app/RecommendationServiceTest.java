@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
 import static org.springframework.http.HttpStatus.*;
 import static reactor.core.publisher.Mono.*;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = {"eureka.client.enabled=false"})
 public class RecommendationServiceTest extends MongoDBTestBase{
 
     @Autowired

@@ -69,6 +69,20 @@ api:
 
 server:
   port: 7000
+server.error.include-message: always
+
+spring.application.name: product-composite
+app.eureka-server: localhost
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${app.eureka-server}:8761/eureka/
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    registryFetchIntervalSeconds: 5
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
 
 app:
   product-service:
@@ -132,6 +146,7 @@ app:
     host: review
     port: 8080
 
+app.eureka-server: eureka
 spring.rabbitmq.host: rabbitmq
 spring.cloud.stream.kafka.binder.brokers: kafka
 ---
